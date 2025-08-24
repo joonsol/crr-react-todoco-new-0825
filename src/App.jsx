@@ -14,7 +14,7 @@ export default function App() {
     <>
       <Header />
       <main>
-   <section id="hero"><Hero /></section>
+        <section id="hero"><Hero /></section>
         <section id="brand"><Brand /></section>
         <section id="products"><Products /></section>
         <section id="ingredients"><Ingredients /></section>

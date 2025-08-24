@@ -1,0 +1,20 @@
+// src/styles/base/_variables.scss
+
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666666;
+  --primary: #DC272D;
+  --secondary: #009BDE;
+  --tertiary: #678c07;
+  --line: rgba(0, 0, 0, .12);
+  --maxw: 1200px;
+  --gutter: 2rem;
+  --p-gradient: linear-gradient(to bottom, #FF7E7E, #DC272D) --s-gradient:linear-gradient(to bottom, #51CAFF, #009BDE)
+}
+
+/* Sass breakpoint 변수 */
+$bp-lg: 1200px;
+$bp-md: 992px;
+$bp-sm: 768px;
+$bp-xs: 480px;

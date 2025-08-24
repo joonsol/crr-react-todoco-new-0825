@@ -1,0 +1,33 @@
+// src/styles/main.scss
+@use "./base/reset";
+@use "./base/variables" as *;
+@use "./base/mixins" as *;
+
+/* 기본 폰트 세팅 */
+* {
+  font-family: "Circular Std", "Noto Sans KR";
+  letter-spacing: -0.05em;
+}
+
+/* 제목 계열은 Circular 우선 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Circular Std", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+
+/* 공통 섹션 */
+.section {
+  padding: 6rem 0;
+}
+
+/* 버튼 스타일 */
+.btn {
+  display: inline-block;
+  padding: .8rem 1.4rem;
+  border-radius: .6rem;
+  border: 1px solid var(--line);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
