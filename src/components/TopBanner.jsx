@@ -7,6 +7,7 @@ import '../styles/components/_topbanner.scss'
 import { headerData } from '../util/header'
 const TopBanner = ({ }) => {
   const tbData = headerData.topBanner.items
+  const closeBtn = headerData.topBanner.closeIcon
   return (
     <div className="top_banner">
       <Swiper
@@ -23,7 +24,7 @@ const TopBanner = ({ }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="close"></div>
+      <div className="close" style={{backgroundImage:`url(${closeBtn})`}}></div>
     </div>
   )
 }

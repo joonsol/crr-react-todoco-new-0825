@@ -1,10 +1,8 @@
 import React from 'react'
 import Nav from './Nav'
 import TopBanner from './TopBanner'
-import { useState } from "react";
 import { headerData } from "../util/header";
 const Header = () => {
-  const [badges, setBadges] = useState(headerData.badges);
   return (
     <div>
       <TopBanner />

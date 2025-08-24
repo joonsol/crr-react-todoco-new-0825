@@ -22,7 +22,7 @@ export const headerData = {
       { id: "tb-2", text: "업데이트 안내", href: "#" },
       { id: "tb-3", text: "이벤트 진행 중!", href: "#" },
     ],
-    closeIcon: img("icon_pop_close.png"),
+    closeIcon: img("icon_pop_close_b.png"),
     background: "#DC272D",
     color: "#fff",
   },
