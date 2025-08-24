@@ -1,0 +1,36 @@
+.top_banner {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #DC272D;
+    color: #fff;
+    text-align: center;
+    height: 4rem;
+    transition: all 0.3s;
+    overflow: hidden;
+  
+    .tb_slider {
+      height: 4rem;
+      z-index: 0;
+  
+      a {
+        display: block;
+        line-height: 4rem;
+        color: #fff;
+        font-size: 1.3rem;
+      }
+    }
+  
+    .close {
+        z-index: 3;
+      position: absolute;
+      right: 3rem;
+      top: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: url('/img/icon_pop_close.png') no-repeat center / contain;
+    }
+
+}  

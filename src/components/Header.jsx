@@ -1,9 +1,14 @@
 import React from 'react'
 import Nav from './Nav'
+import TopBanner from './TopBanner'
 const Header = () => {
   return (
     <div>
-      <Nav/>
+      <TopBanner />
+      <header className='Header'>
+
+        <Nav />
+      </header>
     </div>
   )
 }
