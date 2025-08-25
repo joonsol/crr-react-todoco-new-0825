@@ -1,0 +1,28 @@
+nav ul {
+    display: flex;
+    gap: 2rem;
+
+    li {
+        a {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--primary);
+            position: relative;
+
+            &:after {
+                display: block;
+                content: "";
+                width: 0%;
+                height: 0.1rem;
+                background-color: var(--primary);
+                position: absolute;
+                bottom: -0.5rem;
+                transition: width 0.3s ease;
+            }
+
+            &:hover:after {
+                width: 100%;
+            }
+        }
+    }
+}

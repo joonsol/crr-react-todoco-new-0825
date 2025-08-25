@@ -1,6 +1,7 @@
 import React from 'react'
 import useSmoothScroll from "../hooks/useSmoothScroll"
 import { headerData } from '../util/header'
+import "../styles/components/_nav.scss"
 
 const Nav = () => {
 

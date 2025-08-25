@@ -1,3 +1,29 @@
-@use "../base/main" as *;
+// @use "../base/main" as *;
 
 
+header {
+    position: fixed;
+    top: 4rem;
+    height: 10.5rem;
+    z-index: 3;
+    width: 100%;
+    transition: all 0.3s;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        max-width: none;
+
+        h1.tit {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+
+}

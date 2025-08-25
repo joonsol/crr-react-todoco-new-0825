@@ -37,84 +37,16 @@ export const headerData = {
     { id: "Cta", label: "Cta", href: "#Cta", type: "section" },
   ],
 
-  // 퀵 링크(헤더 우측 짧은 링크들: 고객센터/공지/매장안내 등)
-  quickLinks: [
-    { id: "notice", label: "공지사항", href: "/notice" },
-    { id: "cs", label: "고객센터", href: "/support" },
-    { id: "store", label: "오프라인 매장", href: "/stores" },
+
+
+  utils: [
+    { id: "search", label: "검색", icon: img("icon_search.svg"), href: "#"},
+    { id: "account", label: "마이", icon: img("icon_myp.svg"),  href: "#" },
+    { id: "cart", label: "장바", icon: img("icon_search.svg"),  href: "#" },
   ],
 
-  // 유틸 액션(아이콘 버튼들)
-  actions: [
-    {
-      id: "search",
-      label: "검색",
-      icon: img("icons/search.svg"),
-      type: "modal",       // modal | route | dropdown
-      action: "openSearch" // 프론트에서 핸들링
-    },
-    {
-      id: "cart",
-      label: "장바구니",
-      icon: img("icons/cart.svg"),
-      type: "route",
-      href: "/cart",
-      badgeKey: "cartCount", // 아래 badges 참조
-    },
-    {
-      id: "account",
-      label: "마이",
-      icon: img("icons/user.svg"),
-      type: "dropdown",
-      menu: [
-        { id: "login", label: "로그인", href: "/login" },
-        { id: "orders", label: "주문/배송", href: "/orders" },
-        { id: "mypage", label: "마이페이지", href: "/mypage" },
-      ],
-    },
-    {
-      id: "lang",
-      label: "KR",
-      icon: img("icons/globe.svg"),
-      type: "dropdown",
-      menu: [
-        { id: "ko", label: "KR", href: "?lang=ko" },
-        { id: "en", label: "EN", href: "?lang=en" },
-      ],
-    },
-  ],
 
-  // 뱃지/카운트 상태값 (전역 상태 연동 시 key만 맞추면 됨)
-  badges: {
-    cartCount: 0, // 장바구니 품목 수
-    noticeNew: 0,
-  },
 
-  // 소셜 링크
-  socials: [
-    { id: "ig", label: "Instagram", icon: img("icons/instagram.svg"), href: "https://instagram.com/..." },
-    { id: "yt", label: "YouTube", icon: img("icons/youtube.svg"), href: "https://youtube.com/..." },
-    { id: "fb", label: "Facebook", icon: img("icons/facebook.svg"), href: "https://facebook.com/..." },
-  ],
-
-  // 연락처/브랜드 정보 (푸터나 헤더 드롭다운에서 재사용)
-  contact: {
-    tel: "1644-0000",
-    email: "help@tocobo.co.kr",
-    address: "Seoul, Korea",
-    bizNo: "000-00-00000",
-  },
-
-  // 모바일 메뉴(햄버거) 옵션
-  mobile: {
-    breakpoint: 1024, // px
-    enableDrawer: true,
-  },
 };
 
-// 동적으로 장바구니 뱃지 업데이트할 때 사용할 헬퍼 (선택)
-export const headerHelpers = {
-  setCartCount(n) {
-    headerData.badges.cartCount = Number.isFinite(n) ? n : 0;
-  },
-};
+
