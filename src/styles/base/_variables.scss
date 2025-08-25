@@ -10,7 +10,9 @@
   --line: rgba(0, 0, 0, .12);
   --maxw: 128rem;
   --gutter: 2rem;
-  --p-gradient: linear-gradient(to bottom, #FF7E7E, #DC272D) --s-gradient:linear-gradient(to bottom, #51CAFF, #009BDE)
+  --p-gradient: linear-gradient(to bottom, #FF7E7E, #DC272D) ;
+  --s-gradient:linear-gradient(to bottom, #51CAFF, #009BDE);
+  --h-gradient:linear-gradient(0deg,rgba(255,255,255,0) ,rgba(255,255,255,1) )
 }
 
 /* Sass breakpoint 변수 */

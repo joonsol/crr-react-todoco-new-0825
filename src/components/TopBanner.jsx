@@ -5,11 +5,11 @@ import 'swiper/css'
 import '../styles/components/_topbanner.scss'
 
 import { headerData } from '../util/header'
-const TopBanner = ({ }) => {
+const TopBanner = ({onClick,topBanner }) => {
   const tbData = headerData.topBanner.items
   const closeBtn = headerData.topBanner.closeIcon
   return (
-    <div className="top_banner">
+    <div className={`top_banner ${topBanner}`}>
       <Swiper
         direction="vertical"
         slidesPerView={1}
@@ -24,7 +24,7 @@ const TopBanner = ({ }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="close" style={{backgroundImage:`url(${closeBtn})`}}></div>
+      <div className="close"  onClick={onClick} style={{backgroundImage:`url(${closeBtn})`}}></div>
     </div>
   )
 }

@@ -8,18 +8,18 @@ import Cta from "./sections/Cta";
 import Footer from "./components/Footer";
 import Products from "./sections/Products";
 import "./styles/main.scss";
-
+import { useState } from 'react'
 export default function App() {
   return (
-    <>
+  < >
       <Header />
       <main>
-        <section id="Hero"><Hero /></section>
-        <section id="Brand"><Brand /></section>
-        <section id="Products"><Products /></section>
-        <section id="Ingredients"><Ingredients /></section>
-        <section id="Reviews"><Reviews /></section>
-        <section id="Contact"><Cta /></section>
+        <section className="Section" id="Hero"><Hero /></section>
+        <section className="Section" id="Brand"><Brand /></section>
+        <section className="Section" id="Products"><Products /></section>
+        <section className="Section" id="Ingredients"><Ingredients /></section>
+        <section className="Section" id="Reviews"><Reviews /></section>
+        <section className="Section" id="Contact"><Cta /></section>
       </main>
       <Footer />
     </>

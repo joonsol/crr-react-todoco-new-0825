@@ -8,7 +8,10 @@ header {
     z-index: 3;
     width: 100%;
     transition: all 0.3s;
-
+  
+    &.scroll {
+      background: var(--h-gradient)
+    }
     .inner {
         display: flex;
         justify-content: space-between;
@@ -25,5 +28,8 @@ header {
     }
 
 
+    &.up {
+        top: 0;
+    }
 
 }
