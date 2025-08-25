@@ -1,10 +1,10 @@
 import React from 'react'
 import { headerData } from '../util/header'
-
+import "../styles/components/_util.scss"
 const Util = () => {
   const utilData=headerData.utils
   return (
-    <ul>
+    <ul className='util-lst'>
       {utilData.map((item)=>(
         <li key={item.id}>
           <a href={item.href}>
