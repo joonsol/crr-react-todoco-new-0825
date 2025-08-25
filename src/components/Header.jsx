@@ -1,23 +1,25 @@
 import React from 'react'
 import Nav from './Nav'
+import Util from './Util'
 import TopBanner from './TopBanner'
-import { headerData } from "../util/header";
+import {headerData} from '../util/header'
 const Header = () => {
+  const headerLogo=headerData.logo
   return (
     <div>
       <TopBanner />
-      <header className='Header'>
+
+      <header>
         <div className="inner">
-          <a href={headerData.logo.href} className="logo">
-            <img
-              src={headerData.logo.src}
-              alt={headerData.logo.alt}
-              width={headerData.logo.width}
-              height={headerData.logo.height}
-            />
-          </a>
           <Nav />
+          <h1 className="tit">
+            <a href={headerLogo.href}>
+              <img src={headerLogo.src} alt={headerData.alt} />
+            </a>
+          </h1>
+          <Util />
         </div>
+        Header
       </header>
     </div>
   )

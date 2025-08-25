@@ -1,16 +1,16 @@
-/* 공통 섹션 */
-.section {
-  padding: 6rem 0;
+.Section {
+    padding: 6rem 0;
+    position: relative;
+    z-index: 0;
 }
 
-/* 버튼 스타일 */
-.btn {
-  display: inline-block;
-  padding: .8rem 1.4rem;
-  border-radius: .6rem;
-  border: 1px solid var(--line);
-  background: var(--primary);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
+.Section,
+header,
+footer {
+    .inner {
+        max-width: var(--maxw);
+        height: 100%;
+        position: relative;
+        margin: auto;
+    }
 }

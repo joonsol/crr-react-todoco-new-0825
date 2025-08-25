@@ -28,20 +28,20 @@ export const headerData = {
   },
 
   // GNB 메뉴 (섹션 스크롤 ID 매칭)
+
   menus: [
-    { id: "brand",      label: "BRAND",      href: "#brand",      type: "section" },
-    { id: "products",   label: "PRODUCTS",   href: "#products",   type: "section" },
-    { id: "ingredients",label: "INGREDIENTS",href: "#ingredients",type: "section" },
-    { id: "reviews",    label: "REVIEWS",    href: "#reviews",    type: "section" },
-    // 필요 시 외부 링크(쇼핑몰)도 추가 가능
-    // { id: "store", label: "SHOP", href: "https://store.example.com", type: "external" },
+    { id: "Hero", label: "Hero", href: "#Hero", type: "section" },
+    { id: "Brand", label: "Brand", href: "#Brand", type: "section" },
+    { id: "Products", label: "Products", href: "#Products", type: "section" },
+    { id: "Reviews", label: "Reviews", href: "#Reviews", type: "section" },
+    { id: "Cta", label: "Cta", href: "#Cta", type: "section" },
   ],
 
   // 퀵 링크(헤더 우측 짧은 링크들: 고객센터/공지/매장안내 등)
   quickLinks: [
     { id: "notice", label: "공지사항", href: "/notice" },
-    { id: "cs",     label: "고객센터", href: "/support" },
-    { id: "store",  label: "오프라인 매장", href: "/stores" },
+    { id: "cs", label: "고객센터", href: "/support" },
+    { id: "store", label: "오프라인 매장", href: "/stores" },
   ],
 
   // 유틸 액션(아이콘 버튼들)
@@ -67,7 +67,7 @@ export const headerData = {
       icon: img("icons/user.svg"),
       type: "dropdown",
       menu: [
-        { id: "login",  label: "로그인", href: "/login" },
+        { id: "login", label: "로그인", href: "/login" },
         { id: "orders", label: "주문/배송", href: "/orders" },
         { id: "mypage", label: "마이페이지", href: "/mypage" },
       ],
@@ -92,9 +92,9 @@ export const headerData = {
 
   // 소셜 링크
   socials: [
-    { id: "ig",  label: "Instagram", icon: img("icons/instagram.svg"), href: "https://instagram.com/..." },
-    { id: "yt",  label: "YouTube",   icon: img("icons/youtube.svg"),   href: "https://youtube.com/..." },
-    { id: "fb",  label: "Facebook",  icon: img("icons/facebook.svg"),  href: "https://facebook.com/..." },
+    { id: "ig", label: "Instagram", icon: img("icons/instagram.svg"), href: "https://instagram.com/..." },
+    { id: "yt", label: "YouTube", icon: img("icons/youtube.svg"), href: "https://youtube.com/..." },
+    { id: "fb", label: "Facebook", icon: img("icons/facebook.svg"), href: "https://facebook.com/..." },
   ],
 
   // 연락처/브랜드 정보 (푸터나 헤더 드롭다운에서 재사용)
