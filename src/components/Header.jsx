@@ -30,7 +30,7 @@ const Header = () => {
     <div>
       <TopBanner  onClick={upTopBanner} topBanner={topBanner}/>
 
-      <header className={`{isScrolled? 'scroll':''} ${topBanner}`}>
+     <header className={`${isScrolled ? 'scroll' : ''} ${topBanner}`}>
         <div className="inner">
           <Nav />
           <h1 className="tit">
