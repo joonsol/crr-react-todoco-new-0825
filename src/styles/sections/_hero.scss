@@ -1,2 +1,80 @@
-// src/styles/sections/_hero.scss
-@use "../base/mixins" as *;
+.hero-container {
+  position: relative;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+
+  .hero_slider {
+    .swiper-slide.hero-slide {
+      position: relative;
+      min-height: 78vh; /* 기본 높이 */
+      display: flex;
+      align-items: center;
+
+      /* 오버레이 */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.18) 0%,
+          rgba(0, 0, 0, 0.08) 30%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        pointer-events: none;
+      }
+
+      .inner {
+        position: relative;
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 clamp(16px, 4vw, 40px);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        min-height: inherit;
+      }
+
+      .tit_wrap {
+        max-width: 720px;
+        display: grid;
+        gap: 16px;
+      }
+
+      .con_tit.large_tit {
+        font-weight: 700;
+        line-height: 1.12;
+        font-size: clamp(28px, 6vw, 64px);
+        color: #fff;
+        margin: 0;
+      }
+
+      .txt.l_txt {
+        color: #f5f5f5;
+        font-size: clamp(14px, 2.2vw, 18px);
+        line-height: 1.6;
+      }
+
+      .con_btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        padding: 0 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        font-weight: 600;
+        transition: 0.2s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.18);
+          border-color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+}
