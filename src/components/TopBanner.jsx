@@ -9,7 +9,7 @@ const TopBanner = ({onClick,topBanner }) => {
   const tbData = headerData.topBanner.items
   const closeBtn = headerData.topBanner.closeIcon
   return (
-    <div className={`top_banner ${topBanner}`}>
+    <div className={`top_banner `}>
       <Swiper
         direction="vertical"
         slidesPerView={1}

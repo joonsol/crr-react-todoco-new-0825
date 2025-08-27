@@ -1,0 +1,20 @@
+ .app-container {
+     &.up {
+         .top_banner {
+             transform: translateY(-110%);
+         }
+
+         main {
+             margin-top: 0rem;
+             transition: all .3s;
+         }
+
+         header {
+             top: 0;
+         }
+     }
+
+     main {
+         margin-top: 4rem;
+     }
+ }

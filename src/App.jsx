@@ -8,10 +8,18 @@ import Cta from "./sections/Cta";
 import Footer from "./components/Footer";
 import Products from "./sections/Products";
 import "./styles/main.scss";
+import TopBanner from "./components/TopBanner";
+import "./styles/layout/_container.scss"
 import { useState } from 'react'
 export default function App() {
+    const [topBanner, setTopBanner] = useState("")
+
+      const upTopBanner=()=>{
+      setTopBanner('up')
+  }
   return (
-  < >
+  <div className={`app-container ${topBanner}`}>
+  <TopBanner  onClick={upTopBanner} topBanner={topBanner}/>
       <Header />
       <main>
         <section className="Section" id="Hero"><Hero /></section>
@@ -22,6 +30,6 @@ export default function App() {
         <section className="Section" id="Contact"><Cta /></section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
