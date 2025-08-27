@@ -12,7 +12,21 @@
   --gutter: 2rem;
   --p-gradient: linear-gradient(to bottom, #FF7E7E, #DC272D) ;
   --s-gradient:linear-gradient(to bottom, #51CAFF, #009BDE);
-  --h-gradient:linear-gradient(0deg,rgba(255,255,255,0) ,rgba(255,255,255,1) )
+  --t-gradient:linear-gradient( to bottom,#678c07,#8ca843 );
+  --h-gradient:linear-gradient(0deg,rgba(255,255,255,0) ,rgba(255,255,255,1) );
+
+    --main-slider01-tit: #008fe5;
+    --main-slider01-sub: #231f20;
+    --main-slider02-tit: #009bde;
+    --main-slider02-sub: #231f20;
+    --main-slider03-tit: #678c07;
+    --main-slider03-sub: #231f20;
+    --main-slider04-tit: #DC272D;
+    --main-slider04-sub: #DC272D;
+    --main-slider05-tit: #DC272D;
+    --main-slider05-sub: #DC272D;
+
+
 }
 
 /* Sass breakpoint 변수 */

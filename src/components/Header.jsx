@@ -25,7 +25,7 @@ const Header = () => {
   return (
 
 
-    <header className={`${isScrolled ? 'scroll' : ''} ${topBanner}`}>
+     <header className={isScrolled? 'scroll':''}>
       <div className="inner">
         <Nav />
         <h1 className="tit">

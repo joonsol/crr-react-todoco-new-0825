@@ -5,10 +5,10 @@ const img = (path) => `/img/${path}`;
 export const heroSlides = [
   {
     id: "hs-1",
-    title: "Vegan Skincare Essentials",
+    title: "Always Sun-Ready <br>Mini Sun Stick Trio",
     subtitle: "Clean • Gentle • Effective",
     desc: "피부 본연의 균형을 위한 미니멀 케어",
-    ctaText: "Shop Now",
+    ctaText: "미니 선스틱 트리오 보기",
     ctaHref: "/products",
     image: {
       desktop: img("main_d_1.png"),
@@ -23,7 +23,7 @@ export const heroSlides = [
     title: "Hydration That Lasts",
     subtitle: "Moisture Barrier Care",
     desc: "가볍지만 깊게, 산뜻한 촉촉함",
-    ctaText: "Learn More",
+    ctaText: "컬러립밤 보러가기",
     ctaHref: "/story/hydration",
     image: {
       desktop:  img("main_d_2.png"),
@@ -38,7 +38,7 @@ export const heroSlides = [
     title: "Scent-Free, Worry-Free",
     subtitle: "Sensitive Skin Friendly",
     desc: "민감 피부를 위한 무향 포뮬러",
-    ctaText: "View Collection",
+    ctaText: "스타터 키트 보러가기",
     ctaHref: "/collections/sensitive",
     image: {
       desktop:  img("main_d_3.png"),
@@ -53,7 +53,7 @@ export const heroSlides = [
     title: "Eco-Conscious Beauty",
     subtitle: "Vegan & Cruelty-Free",
     desc: "지속 가능성을 생각한 깔끔한 선택",
-    ctaText: "Our Philosophy",
+    ctaText: "혜택보러가기",
     ctaHref: "/about",
     image: {
       desktop:  img("main_d_4.png"),

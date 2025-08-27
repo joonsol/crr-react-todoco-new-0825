@@ -13,17 +13,23 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+      modules={[Navigation, Pagination, Autoplay]}
         className="swiper hero_slider"
-        navigation={{ nextEl: '.arr_next', prevEl: '.arr_prev' }}
-        pagination={{ el: '.swiper-pagination', type: 'fraction' }}
-        loop
-        autoplay={{ delay: 5000 }}
+        navigation={{
+          nextEl: '.arr_next',
+          prevEl: '.arr_prev'
+        }}
+        pagination={{
+          el: '.swiper-pagination',
+          type: 'fraction'
+        }}
+        loop={true}
+        // autoplay={{ delay: 5000 }}
       >
         {heroSlides.map((slide) => (
           <SwiperSlide
             key={slide.id}
-            className="hero-slide"
+            className={`hero-slide ${slide.id}`}
             style={{
               backgroundImage: `url(${slide.image.desktop})`,
               backgroundSize: 'cover',
