@@ -7,7 +7,10 @@ import "./styles/main.scss";
 import TopBanner from "./components/TopBanner";
 import "./styles/layout/_container.scss"
 import FixedTopBtn from "./components/FixedTopBtn";
-import Hello from './sections/'
+import Hello from './sections/Hello'
+import Collection from './sections/Collection'
+import SkinCare from './sections/SkinCare'
+import Instar from './sections/Instar'
 import { useState } from 'react'
 export default function App() {
     const [topBanner, setTopBanner] = useState("")
@@ -23,10 +26,18 @@ export default function App() {
       <main>
         <section className="Section" id="Hero"><Hero /></section>
         <section className="Section" id="Cta"><Cta /></section>
-        <section className="Section" id="Hello"></section>
-        <section className="Section" id="Collection"></section>
-        <section className="Section" id="SkinCare"></section>
-        <section className="Section" id="Instar"></section>
+        <section className="Section" id="Hello">
+          <Hello/>
+        </section>
+        <section className="Section" id="Collection">
+          <Collection/>
+        </section>
+        <section className="Section" id="SkinCare">
+          <SkinCare/>
+        </section>
+        <section className="Section" id="Instar">
+          <Instar/>
+        </section>
       </main>
       <Footer />
     </div>
