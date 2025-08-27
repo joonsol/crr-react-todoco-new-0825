@@ -29,13 +29,15 @@ export const headerData = {
 
   // GNB 메뉴 (섹션 스크롤 ID 매칭)
 
-  menus: [
-    { id: "Hero", label: "Hero", href: "#Hero", type: "section" },
-    { id: "Brand", label: "Brand", href: "#Brand", type: "section" },
-    { id: "Products", label: "Products", href: "#Products", type: "section" },
-    { id: "Reviews", label: "Reviews", href: "#Reviews", type: "section" },
-    { id: "Cta", label: "Cta", href: "#Cta", type: "section" },
-  ],
+menus: [
+  { id: "Hero",       label: "Hero",       href: "#Hero",       type: "section" },
+  { id: "Cta",        label: "Cta",        href: "#Cta",        type: "section" },
+  { id: "Hello",      label: "Hello",      href: "#Hello",      type: "section" },
+  { id: "Collection", label: "Collection", href: "#Collection", type: "section" },
+  { id: "SkicCare",   label: "SkicCare",   href: "#SkicCare",   type: "section" },
+  { id: "Instar",     label: "Instar",     href: "#Instar",     type: "section" },
+]
+,
 
 
 
