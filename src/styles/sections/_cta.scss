@@ -1,0 +1,27 @@
+.cta-lst {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+
+    li {
+
+        // flex: 1;
+        .img-wrap {
+            overflow: hidden;
+            width: 15rem;
+            border-radius: 50%;
+            height: 15rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-color: #f0f0f0;
+        }
+
+        p {
+            display: block;
+            padding: 10px 0 0;
+            font-size: 1.5rem;
+        }
+    }
+}
