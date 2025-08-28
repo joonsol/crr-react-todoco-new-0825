@@ -11,9 +11,9 @@ const Hello = () => {
         <p className="txt-2">
           {helloData.eyebrow}
         </p>
-        <h1 className="tit">
+        <h2 className="tit">
           {helloData.title}
-        </h1>
+        </h2>
       </div>
     </div>
   )
