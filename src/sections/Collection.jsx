@@ -30,9 +30,8 @@ const Collection = () => {
   return (
      <div className="inner collection-inner">
         <div className="tit_wrap">
-          <div className="con_tit">
-            TOCOBO <br className="m_only" /> COLLECTION
-          </div>
+          <h2 className="con-tit">            TOCOBO <br className="m_only" /> COLLECTION
+          </h2>
           <p className="txt_2">Shop By Category</p>
         </div>
 
