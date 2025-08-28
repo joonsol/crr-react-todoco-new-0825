@@ -1,0 +1,118 @@
+
+
+  
+    .collection-inner {
+      max-width: 144rem;
+      margin: 0 auto;
+    }
+  
+    .con-tit {
+      color: #009BDE;
+    }
+  
+    .tit_wrap {
+      margin-bottom: 7rem;
+    }
+  
+    .s2_slider_wrap {
+      position: relative;
+      padding: 0 4rem;
+  
+      .s2_slider {
+        .img_wrap {
+          background-color: #fff;
+          width: 36rem;
+          height: 36rem;
+          margin: 2.5rem auto 3rem;
+          border-radius: 1rem;
+          overflow: hidden;
+  
+          img {
+            animation: up 1.5s alternate infinite ease-in-out;
+            width: 110%;
+            height: 110%;
+          }
+        }
+      }
+  
+      // 자동 생성되는 pagination
+      .swiper-pagination {
+        position: static;
+        width: 122rem;
+        margin: 3rem auto 0;
+        background-color: #fff;
+  
+        .swiper-pagination-progressbar-fill {
+          background-color: #009BDE;
+          height: 0.2rem;
+        }
+      }
+  
+      // 자동 생성되는 navigation 버튼
+      .custom-next,
+      .custom-prev {
+        width: 3.5rem;
+        height: 6.7rem;
+        top: calc(50% - 3rem);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        z-index: 3;
+        cursor: pointer;
+        &::after {
+          display: none;
+        }
+      }
+  
+      .custom-next {
+        right: 4rem;
+        background-image: url('/img/pd_slide_arrow_next.svg');
+      }
+  
+      .custom-prev {
+        left: 4rem;
+        background-image: url('/img/pd_slide_arrow_prev.svg');
+      }
+    }
+  
+  
+  // 텍스트 정보 박스
+  .collect_btn {
+    display: inline-block;
+    border: 0.1rem solid #009BDE;
+    font-size: 1.3rem;
+    color: #009BDE;
+    padding: 1.3rem 1.8rem 1.1rem;
+    border-radius: 6rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  
+  .name {
+    font-size: 2rem;
+    line-height: 1;
+    color: #231F20;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  
+  .kname {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    color: #231F20;
+  }
+  
+  // 애니메이션 정의 (이미지 살짝 위로)
+  @keyframes up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-1.2rem);
+    }
+  }
+  

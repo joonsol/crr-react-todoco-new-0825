@@ -1,25 +1,55 @@
 .Section {
-    padding: 6rem 0;
-    position: relative;
-    z-index: 0;
-    &#Hero {
-        padding: 0;
-    }
-    &#Cta {
-      // padding:3rem 0;
-      min-height: auto;
-    }
+  padding: 6rem 0;
+  position: relative;
+  z-index: 0;
+
+  &#Hero {
+    padding: 0;
+  }
+
+  &#Cta {
+    // padding:3rem 0;
+    min-height: auto;
+  }
+
+  &#Hello {
+    padding: 5rem 0 13rem
+  }
+  &#Collection{
+        background-color: #EEF8FF;
+    text-align: center;
+  }
 }
 
 .Section,
 header,
 footer {
-    .inner {
-        max-width: var(--maxw);
-        height: 100%;
-        position: relative;
-        margin: auto;
-    }
+  .inner {
+    max-width: var(--maxw);
+    height: 100%;
+    position: relative;
+    margin: auto;
+  }
+}
+
+.con-tit {
+  font-size: 7.3rem;
+  font-family: "Circular Std", "Noto Sans KR";
+  font-weight: 200;
+  /* ← 세미콜론 추가 */
+}
+
+.txt-2 {
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--secondary);
+  font-family: 'Source Serif Pro', serif;
+}
+
+p.txt {
+  font-size: 2.1rem;
+  line-height: 1.2;
 }
 
 .con_btn {
@@ -34,6 +64,7 @@ footer {
   overflow: hidden;
   border: 0.1rem solid transparent;
   transition: all 0.8s;
+  cursor: pointer;
 
   &:after {
     display: block;
@@ -51,8 +82,8 @@ footer {
 
 
   &:hover {
-      border: 0.1rem solid var(--secondary);
-      color: var(--secondary);
+    border: 0.1rem solid var(--secondary);
+    color: var(--secondary);
 
     &:after {
       background: #fff;

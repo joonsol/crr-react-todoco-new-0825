@@ -40,7 +40,7 @@ const Hero = () => {
             <div className="inner">
               <div className="tit_wrap">
                 <h2
-                  className="con_tit large_tit"
+                  className="con-tit large_tit"
                   dangerouslySetInnerHTML={{ __html: slide.title }}
                 />
                 <p className="txt l_txt">{slide.subtitle}</p>

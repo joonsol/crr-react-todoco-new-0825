@@ -1,5 +1,6 @@
 import React from 'react'
 import {helloData} from '../util/hello'
+import "../styles/sections/_hello.scss"
 const Hello = () => {
   return (
 
@@ -11,9 +12,16 @@ const Hello = () => {
         <p className="txt-2">
           {helloData.eyebrow}
         </p>
-        <h2 className="tit">
-          {helloData.title}
-        </h2>
+        <h2 className="con-tit"
+        dangerouslySetInnerHTML={{__html:helloData.title}}             />
+        <p className="txt-3"
+          dangerouslySetInnerHTML={{__html:helloData.description}}     
+        />
+
+
+        <a href={helloData.href} className="con_btn">
+          {helloData.cta.label}
+        </a>
       </div>
     </div>
   )
