@@ -68,12 +68,12 @@
       }
   
       .custom-next {
-        right: 4rem;
+        right: -4rem;
         background-image: url('/img/pd_slide_arrow_next.svg');
       }
   
       .custom-prev {
-        left: 4rem;
+        left: -4rem;
         background-image: url('/img/pd_slide_arrow_prev.svg');
       }
     }

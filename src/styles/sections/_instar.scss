@@ -1,0 +1,21 @@
+.inner.instar-inner{
+
+  .instar-lst{
+display: flex;
+gap:1rem    ;
+justify-content: center;
+
+    li{
+ width: 21.3rem;
+      height:21.3rem;
+      a{
+        display: block;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-size: 0;
+      }
+    }
+  }
+}

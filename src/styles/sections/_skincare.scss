@@ -1,0 +1,26 @@
+.inner.skincare-inner{
+  display: flex;
+  .t-wrap {
+    max-width: 50rem;
+  }
+  .skincare-sl-wrap{
+    width: 75rem;
+    height: 53rem;
+    position: relative;
+    transform: translateX(20rem);
+    .in {
+      position: absolute;
+      width: 150rem;
+      height: 100%;
+    }
+    .swiper{
+      height: 100%;
+      font-size: 0;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
