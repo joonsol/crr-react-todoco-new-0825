@@ -46,6 +46,7 @@
 .Section,
 header,
 footer {
+
   .inner {
     max-width: var(--maxw);
     height: 100%;
@@ -53,7 +54,13 @@ footer {
     margin: auto;
   }
 }
-
+footer {
+  border: 0;
+  border-top: 1px solid var(--primary);
+  text-align: left;
+  padding: 7rem 0 5rem;
+  background-color: var(--bg)
+}
 .con-tit {
   font-size: 7.3rem;
   font-family: "Circular Std", "Noto Sans KR";
