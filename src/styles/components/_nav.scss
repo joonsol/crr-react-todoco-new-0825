@@ -1,28 +1,67 @@
-nav ul {
-    display: flex;
-    gap: 2rem;
+nav {
+    .mob-nav-btn {
+        display: none;
+        position: relative;
+        z-index: 6;
 
-    li {
-        a {
+        @media screen and (max-width:1200px) {
             display: block;
-            font-size: 1.8rem;
-            color: var(--primary);
-            position: relative;
 
-            &:after {
-                display: block;
-                content: "";
-                width: 0%;
-                height: 0.1rem;
-                background-color: var(--primary);
-                position: absolute;
-                bottom: -0.5rem;
-                transition: width 0.3s ease;
-            }
-
-            &:hover:after {
-                width: 100%;
-            }
         }
     }
+
+    .mob-nav-close-btn {
+        display: none;
+        z-index: 6;
+        position: relative;
+
+        @media screen and (max-width:1200px) {
+            display: block;
+
+        }
+
+    }
+
+    >ul {
+        display: flex;
+        gap: 2rem;
+
+        li {
+            a {
+                display: block;
+                font-size: 1.8rem;
+                color: var(--primary);
+                position: relative;
+
+                &:after {
+                    display: block;
+                    content: "";
+                    width: 0%;
+                    height: 0.1rem;
+                    background-color: var(--primary);
+                    position: absolute;
+                    bottom: -0.5rem;
+                    transition: width 0.3s ease;
+                }
+
+                &:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+
+
+
+
+    }
+
+    @media screen and (max-width:1200px) {
+
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg);
+
+    }
+
+    &.open {}
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import useSmoothScroll from "../hooks/useSmoothScroll"
 import { headerData } from '../util/header'
 import "../styles/components/_nav.scss"
@@ -7,7 +7,7 @@ const Nav = () => {
 
   const navLink = headerData.menus
   const scrollTo = useSmoothScroll()
-
+  const [isOpen, setIsOpen] = useState(false)
     const handleClick = (e, item) => {
     if (item.type === "section") {
       e.preventDefault();
@@ -16,7 +16,10 @@ const Nav = () => {
     }
   };
   return (
-    <nav>
+  <nav className={`nav ${isOpen ? "open" : ""}`}>
+      <a href="#" className="mob-nav-btn"    onClick={() => setIsOpen(true)}>
+        <img src="/img/icon_ham.svg" alt="ham-icon"  />
+      </a>
       <ul>
         {navLink.map((item) => (
           <li key={item.id}>
@@ -27,6 +30,9 @@ const Nav = () => {
 
         ))}
       </ul>
+            <a href="#" className="mob-nav-close-btn"  onClick={() => setIsOpen(false)}>
+        <img src="/img/icon_search_close.png" alt="ham-icon"  />
+      </a>
     </nav>
   )
 }

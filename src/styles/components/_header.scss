@@ -8,18 +8,24 @@ header {
     z-index: 3;
     width: 100%;
     transition: all 0.3s;
- padding: 0 4rem; 
-    &.scroll {
-      background: var(--h-gradient)
+    padding: 0 4rem;
+    @media screen and (max-width:1600px) {
+        padding: 0 ;
     }
+
+    &.scroll {
+        background: var(--h-gradient)
+    }
+
     .inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        padding: 0;
 
         max-width: none !important;
-    
+
 
         h1.tit {
             position: absolute;
