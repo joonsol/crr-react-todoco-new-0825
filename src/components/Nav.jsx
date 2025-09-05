@@ -1,38 +1,34 @@
-import React,{useState} from 'react'
-import useSmoothScroll from "../hooks/useSmoothScroll"
+// src/components/Nav.jsx
+import React from 'react'
 import { headerData } from '../util/header'
 import "../styles/components/_nav.scss"
 
-const Nav = () => {
-
+const Nav = ({ isOpen, onOpen, onClose, onToggle }) => {
   const navLink = headerData.menus
-  const scrollTo = useSmoothScroll()
-  const [isOpen, setIsOpen] = useState(false)
-    const handleClick = (e, item) => {
-    if (item.type === "section") {
-      e.preventDefault();
-      const id = item.href?.startsWith("#") ? item.href.slice(1) : item.id;
-      scrollTo(id);
-    }
-  };
+
   return (
-  <nav className={`nav ${isOpen ? "open" : ""}`}>
-      <a href="#" className="mob-nav-btn"    onClick={() => setIsOpen(true)}>
-        <img src="/img/icon_ham.svg" alt="ham-icon"  />
-      </a>
-      <ul>
+    <nav className={`nav ${isOpen ? "open" : ""}`}>
+      {/* 햄버거 열기 버튼 (모바일) */}
+      <button
+        type="button"
+        className="mob-nav-btn"
+        onClick={onOpen}
+        aria-expanded={isOpen}
+        aria-controls="gnb"
+      >
+        <img src="/img/icon_ham.svg" alt="메뉴 열기" />
+      </button>
+
+      {/* 데스크톱 GNB(필요 시 유지) */}
+      <ul id="gnb" role="menubar">
         {navLink.map((item) => (
-          <li key={item.id}>
-            <a href={item.href} onClick={(e) => handleClick(e, item)}>
+          <li key={item.id} role="none">
+            <a role="menuitem" href={item.href}>
               {item.label}
             </a>
           </li>
-
         ))}
       </ul>
-            <a href="#" className="mob-nav-close-btn"  onClick={() => setIsOpen(false)}>
-        <img src="/img/icon_search_close.png" alt="ham-icon"  />
-      </a>
     </nav>
   )
 }

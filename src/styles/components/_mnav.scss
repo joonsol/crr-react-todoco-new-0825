@@ -1,0 +1,59 @@
+    .mob-nav-wrap {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg2);
+      top: 0;
+      z-index: 16;
+      padding: 4rem 2rem 0;
+      overflow: hidden;
+
+      .m-top {
+        display: flex;
+        justify-content: space-between;
+
+        .mob-nav-close-btn {
+          width: 4.7rem;
+        }
+
+        >.util-lst {
+          >li {
+            display: block;
+            width: 2.3rem;
+          }
+        }
+      }
+
+      .m-nav-lst {
+        margin-top: 5.2rem;
+
+        li {
+
+          font-size: 3.3rem;
+          color: var(--primary);
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: 0;
+        }
+
+        li+li {
+          margin-top: 2.5rem;
+        }
+      }
+
+      .btm-lst {
+        position: absolute;
+        bottom: 4rem;
+
+        >li {
+          font-size: 1.6rem;
+          color: #231F20;
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: 0;
+          margin-top: 2rem;
+        }
+
+      }
+    }

@@ -38,13 +38,14 @@
       bottom: 0;
     }
   }
+
   &#Instar {
     background-color: var(--bg2);
   }
 }
 
 .Section,
-header,
+
 footer {
 
   .inner {
@@ -52,24 +53,15 @@ footer {
     height: 100%;
     position: relative;
     margin: auto;
+
     @media screen and (max-width:1600px) {
       padding: 0 2rem
-      
     }
   }
 }
-header{
 
-  .inner{
-    @media screen and (max-width:1600px) {
-      padding: 0 ;
-   
 
-      
-    }
 
-  }
-}
 
 footer {
   border: 0;
@@ -78,6 +70,7 @@ footer {
   padding: 7rem 0 5rem;
   background-color: var(--bg)
 }
+
 .con-tit {
   font-size: 7.3rem;
   font-family: "Circular Std", "Noto Sans KR";

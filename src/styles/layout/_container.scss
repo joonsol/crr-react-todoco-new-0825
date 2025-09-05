@@ -12,6 +12,11 @@
          header {
              top: 0;
          }
+
+
+        &.nav-open {
+            display: block;
+        }
      }
 
      main {
