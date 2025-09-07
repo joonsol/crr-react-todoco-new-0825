@@ -6,6 +6,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+     @media screen and (max-width:1111px) {
+      height:clamp(70rem,90rem,100vw);
+     }
 
     .inner {
       max-width: 160rem;

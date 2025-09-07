@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -10,6 +10,13 @@ import { heroSlides } from '../util/hero'
 import '../styles/sections/_hero.scss'
 
 const Hero = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1111)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 1111)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   return (
     <div className="hero-container">
       <Swiper
@@ -31,7 +38,9 @@ const Hero = () => {
             key={slide.id}
             className={`hero-slide ${slide.id}`}
             style={{
-              backgroundImage: `url(${slide.image.desktop})`,
+               backgroundImage: `url(${
+                isMobile ? slide.image.mobile : slide.image.desktop
+              })`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',

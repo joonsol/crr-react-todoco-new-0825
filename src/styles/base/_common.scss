@@ -72,14 +72,14 @@ footer {
 }
 
 .con-tit {
-  font-size: 7.3rem;
+  font-size: clamp(4rem, 6vw, 7.3rem);
   font-family: "Circular Std", "Noto Sans KR";
   font-weight: 200;
   /* ← 세미콜론 추가 */
 }
 
 .txt-2 {
-  font-size: 19px;
+  font-size:clamp(1.2rem,1.4vw,1.9rem);
   line-height: 1;
   letter-spacing: 0;
   color: var(--secondary);
@@ -87,7 +87,8 @@ footer {
 }
 
 p.txt {
-  font-size: 2.1rem;
+  font-size:clamp(1.6rem,1.8vw,2.1rem);
+
   line-height: 1.2;
 }
 
@@ -120,6 +121,11 @@ p.txt-4 {
   transition: all 0.8s;
   cursor: pointer;
 
+  @media screen and (max-width:1111px) {
+    font-size: 1.3rem;
+    padding: 1rem 3rem;
+    
+  }
   &:after {
     display: block;
     content: "";
