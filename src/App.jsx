@@ -24,6 +24,18 @@ export default function App() {
     document.body.style.overflow = navOpen ? 'hidden' : '';
   }, [navOpen]);
 
+
+  useEffect(()=>{
+    const handleResize=()=>{
+
+      if(window.innerWidth>768)setNavOpen(false)
+      }
+    window.addEventListener('resize',handleResize)
+    handleResize()
+    return ()=>{window.removeEventListener('resize',handleResize)}
+  },[])
+
+
   const handleNavOpen = () => setNavOpen(true);
   const handleNavClose = () => setNavOpen(false);
   const handleNavToggle = () => setNavOpen(prev => !prev);
