@@ -41,9 +41,7 @@ const Hero = () => {
                backgroundImage: `url(${
                 isMobile ? slide.image.mobile : slide.image.desktop
               })`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
+       
             }}
           >
             <div className="inner">
