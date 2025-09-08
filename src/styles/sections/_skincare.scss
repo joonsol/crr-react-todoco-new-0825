@@ -1,22 +1,46 @@
-.inner.skincare-inner{
+.inner.skincare-inner {
   display: flex;
-  .t-wrap {
-    max-width: 50rem;
+
+  @media screen and (max-width:1111px) {
+
+    flex-direction: column;
+    gap: 5rem;
   }
-  .skincare-sl-wrap{
+
+
+  .tit-wrap {
+    max-width: 50rem;
+      @media screen and (max-width:1111px) {
+        max-width: none;
+        margin-bottom: 0;
+      }
+  }
+
+  .skincare-sl-wrap {
     width: 75rem;
     height: 53rem;
     position: relative;
     transform: translateX(30rem);
+    @media screen and (max-width:1111px) {
+      width: clamp(30rem, 60vw, 80vw);
+      transform: translateX(0rem);
+      height:clamp(25rem , 35vw, 40rem);
+        }
+
     .in {
       position: absolute;
-      width: 150rem;
+      width: 180vw;
       height: 100%;
+      @media screen and (max-width:1111px) {
+            width: clamp(60rem, 120vw, 160vw);
+          }
     }
-    .swiper{
+
+    .swiper {
       height: 100%;
       font-size: 0;
-      a{
+
+      a {
         display: block;
         width: 100%;
         height: 100%;

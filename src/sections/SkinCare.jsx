@@ -7,7 +7,7 @@ import 'swiper/css'
 const SkinCare = () => {
   return (
     <div className='inner skincare-inner'>
-      <div className="tit_wrap">
+      <div className="tit-wrap">
         <h2 className="con-tit">
           Vegan  <br className="m_only" />
           Skincare

@@ -2,6 +2,11 @@
 
     display: flex;
     align-items: center;
+      @media screen and (max-width:1111px) {
+        flex-direction: column-reverse;
+        gap: 10rem;
+        padding-top: 5rem;
+      }
 
     .t-wrap {
         width: 63rem;

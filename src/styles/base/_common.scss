@@ -36,6 +36,11 @@
       z-index: -1;
       background-color: var(--bg2);
       bottom: 0;
+
+      @media screen and (max-width:1111px) {
+        height: clamp(8rem, 10vw, 15rem);
+
+      }
     }
   }
 
@@ -79,7 +84,7 @@ footer {
 }
 
 .txt-2 {
-  font-size:clamp(1.2rem,1.4vw,1.9rem);
+  font-size: clamp(1.2rem, 1.4vw, 1.9rem);
   line-height: 1;
   letter-spacing: 0;
   color: var(--secondary);
@@ -87,7 +92,7 @@ footer {
 }
 
 p.txt {
-  font-size:clamp(1.6rem,1.8vw,2.1rem);
+  font-size: clamp(1.6rem, 1.8vw, 2.1rem);
 
   line-height: 1.2;
 }
@@ -124,8 +129,9 @@ p.txt-4 {
   @media screen and (max-width:1111px) {
     font-size: 1.3rem;
     padding: 1rem 3rem;
-    
+
   }
+
   &:after {
     display: block;
     content: "";

@@ -1,14 +1,18 @@
-.inner.instar-inner{
+.inner.instar-inner {
 
-  .instar-lst{
-display: flex;
-gap:1rem    ;
-justify-content: center;
+  .instar-lst {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+      @media screen and (max-width:1111px) {
+      flex-wrap: wrap;
+      }
 
-    li{
- width: 21.3rem;
-      height:21.3rem;
-      a{
+    li {
+      width:clamp(13rem,15vw,21.3rem);
+      height: clamp(13rem,15vw,21.3rem);
+
+      a {
         display: block;
         height: 100%;
         background-size: cover;

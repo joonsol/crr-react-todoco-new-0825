@@ -4,6 +4,12 @@
     justify-content: center;
     gap: 2rem;
 
+    @media screen and (max-width:1111px) {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+
     li {
 
         // flex: 1;
@@ -16,6 +22,11 @@
             background-repeat: no-repeat;
             background-size: 80%;
             background-color: #f0f0f0;
+
+            @media screen and (max-width:1111px) {
+                width: 10rem;
+                height: 10rem;
+            }
         }
 
         p {
