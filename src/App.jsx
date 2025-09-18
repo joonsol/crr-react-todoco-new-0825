@@ -1,64 +1,103 @@
-// src/App.jsx
-import Header from "./components/Header";
-import Hero from "./sections/Hero";
-import Cta from "./sections/Cta";
-import Footer from "./components/Footer";
-import "./styles/main.scss";
-import TopBanner from "./components/TopBanner";
-import "./styles/layout/_container.scss"
-import FixedTopBtn from "./components/FixedTopBtn";
-import Hello from './sections/Hello'
-import Collection from './sections/Collection'
-import SkinCare from './sections/SkinCare'
-import Instar from './sections/Instar'
-import { useState, useEffect } from 'react'
 
-export default function App() {
-  const [topBanner, setTopBanner] = useState("");
-  const [navOpen, setNavOpen] = useState(false);        // ⬅️ Nav 상태를 최상위로
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import Hero from "./sections/Hero"
 
-  const upTopBanner = () => setTopBanner('up');
+import Cta from "./sections/Cta"
 
-  // (선택) 메뉴 열렸을 때 바디 스크롤 잠금
+import "./styles/main.scss"
+import TopBanner from "./components/TopBanner"
+import { useState, useEffect } from "react"
+import TopBtn from "./components/TopBtn"
+import Hello from "./sections/Hello"
+import Collection from "./sections/Collection"
+import Skincare from "./sections/Skincare"
+import Instargram from "./sections/Instargram"
+import AOS from "aos"
+import "aos/dist/aos.css";
+function App() {
+
+  const [topBanner, setTopBanner] = useState("")
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [mNavOpen, setMNavOpen] = useState(false)
+
+
   useEffect(() => {
-    document.body.style.overflow = navOpen ? 'hidden' : '';
-  }, [navOpen]);
+    AOS.init({
+      duration: 400, // values from 0 to 3000, with step 50ms
+      easing: 'ease', // default easing for AOS animations
+    });
+  }, [])
+  useEffect(() => {
+    document.body.style.overflow = mNavOpen ? 'hidden' : ''
+  }, [mNavOpen])
 
 
-  useEffect(()=>{
-    const handleResize=()=>{
 
-      if(window.innerWidth>768)setNavOpen(false)
-      }
-    window.addEventListener('resize',handleResize)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+
+      setIsScrolled(scrollTop > 0)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+
+  })
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1111) setMNavOpen(false)
+    }
+
     handleResize()
-    return ()=>{window.removeEventListener('resize',handleResize)}
-  },[])
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+
+  }, [])
+
+  const handleNavOpen = () => setMNavOpen(true)
+  const handleNavClose = () => setMNavOpen(false)
 
 
-  const handleNavOpen = () => setNavOpen(true);
-  const handleNavClose = () => setNavOpen(false);
-  const handleNavToggle = () => setNavOpen(prev => !prev);
+  const upTopBanner = () => {
+    setTopBanner("up")
+  }
 
   return (
-    <div className={`app-container ${topBanner} ${navOpen ? 'nav-open' : ''}`}>
-      <FixedTopBtn />
-      <TopBanner onClick={upTopBanner} topBanner={topBanner} />
+    <div className={`app-container  ${topBanner} ${isScrolled ? "scrolled" : ""}`}>
+      <TopBtn />
+      <TopBanner onClick={upTopBanner} />
       <Header
-        navOpen={navOpen}
+        mNavOpen={mNavOpen}
         onNavOpen={handleNavOpen}
         onNavClose={handleNavClose}
-        onNavToggle={handleNavToggle}
       />
-      <main onClick={navOpen ? handleNavClose : undefined /* 빈 곳 클릭 시 닫힘(옵션) */}>
-        <section className="Section" id="Hero"><Hero /></section>
-        <section className="Section" id="Cta"><Cta /></section>
-        <section className="Section" id="Hello"><Hello/></section>
-        <section className="Section" id="Collection"><Collection/></section>
-        <section className="Section" id="SkinCare"><SkinCare/></section>
-        <section className="Section" id="Instar"><Instar/></section>
+      <main>
+        <section id="Hero" className="Section">
+          <Hero />
+        </section>
+        <section id="Cta" className="Section">
+          <Cta />
+        </section>
+        <section id="Hello" className="Section">
+          <Hello />
+        </section>
+
+        <section id="Collection" className="Section">
+          <Collection />
+        </section>
+        <section id="Skincare" className="Section">
+          <Skincare />
+        </section>
+        <section id="Instar" className="Section">
+          <Instargram />
+        </section>
+
       </main>
       <Footer />
     </div>
-  );
+  )
 }
+
+export default App

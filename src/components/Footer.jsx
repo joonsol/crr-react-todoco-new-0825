@@ -1,15 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { logoData, companyData, customerCenterData, footerMenus, footerLegal } from "../util/footer";
-import "../styles/components/_footer.scss";
+import {
+  logoData,
+  companyData,
+  customerCenterData,
+  footerMenus,
+  socialLinks,
+  footerLegal
+} from "../util/footer";
+
+import "../styles/components/footer.scss"
 
 const Footer = () => {
   const [cusStatus, setCusStatus] = useState(false);
   const hiddenRef = useRef(null);
+  const didMount = useRef(false); // 최초 실행 여부 체크
 
-  // 반응형 대응 (1111px 미만일 때 자동 닫힘/열림)
+
+
+  // 1) 화면폭 기준 초기 상태 세팅 + 리사이즈 대응
   useEffect(() => {
     const reSizeOpen = () => {
-      setCusStatus(window.innerWidth < 1111);
+      setCusStatus(window.innerWidth >= 1111);
     };
     reSizeOpen();
     window.addEventListener("resize", reSizeOpen);
@@ -37,7 +48,6 @@ const Footer = () => {
       el.style.height = "0px";
     }
   }, [cusStatus]);
-
   return (
     <footer className="footer">
       <div className="inner foot-inner">
@@ -56,8 +66,8 @@ const Footer = () => {
           <div className="footer-legal">
             <p>{footerLegal.copyright}</p>
             <div className="legal-links">
-              {footerLegal.links.map((item, idx) => (
-                <a key={idx} href={item.href}>
+              {footerLegal.links.map((item, i) => (
+                <a key={i} href={item.href}>
                   {item.label}
                 </a>
               ))}
@@ -81,41 +91,58 @@ const Footer = () => {
             ))}
           </div>
         </div>
-
-        {/* 오른쪽 영역 (고객센터) */}
+        {/* 오른쪽 영역(비워둠 / SNS 등 넣을 자리) */}
         <div className="right">
-          <div 
+
+          {/* 고객센터 */}
+          <div
             onClick={() => setCusStatus(v => !v)}
-           className={`${cusStatus ? "open" : ""} cus-wrap`}
+            className={`${cusStatus ? "open" : ""} cus-wrap`}
           >
             <h4>
               {customerCenterData.title}
               <span className="m-plus"></span>
             </h4>
-
-            {/* JS height transition */}
             <div className="hidden" ref={hiddenRef}>
-              <p className="cs-box">
+
+              <p className='cs-box'>
                 <a href={customerCenterData.tel.href}>
                   {customerCenterData.tel.value}
                 </a>
               </p>
               <p>{customerCenterData.hours}</p>
               <p>{customerCenterData.notice}</p>
-              <a className="talk-btn" href={customerCenterData.talk.href}>
+              <a className='talk-btn' href={customerCenterData.talk.href}>
                 {customerCenterData.talk.label}
               </a>
             </div>
           </div>
 
+          <div className="footer-legal">
+
             <div className="legal-links">
-              {footerLegal.links.map((item, idx) => (
-                <a key={idx} href={item.href}>
+              {footerLegal.links.map((item, i) => (
+                <a key={i} href={item.href}>
                   {item.label}
                 </a>
               ))}
             </div>
-       
+            <p>{footerLegal.copyright}</p>
+          </div>
+
+          <ul className="sns-links">
+            {socialLinks.map((sns) => (
+              <li key={sns.id}>
+                <a href={sns.href}
+                  target="_blank" rel="noreferrer noopener"
+                  aria-label={sns.label}
+                  title={sns.label}>
+                  {React.createElement(sns.icon, { size: 22, "aria-hidden": true })}
+                </a>
+              </li>
+            ))}
+          </ul>
+
         </div>
       </div>
     </footer>

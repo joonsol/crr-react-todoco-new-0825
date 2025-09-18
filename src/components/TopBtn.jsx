@@ -1,26 +1,24 @@
 import React from 'react'
-import '../styles/components/_fixedtopbtn.scss'
+import '../styles/components/topbtn.scss'
 import useSmoothScroll from '../hooks/useSmoothScroll'
-const FixedTopBtn = () => {
+const TopBtn = () => {
   const scrollTo = useSmoothScroll()
   return (
-
-    <div className="fixed-top-container">
-      <button className='fixed-btn'
+    <div className='fixed-top'>
+      {/* icon_top.svg */}
+      <button
         onClick={(e) => {
           e.preventDefault()
           scrollTo('Hero')
         }}
-
-      >
-
-        FixedTopBtn</button>
+        className='top-btn'>위로 올라가는 버튼</button>
+      {/* icon_talk.svg */}
       <a href="#" className="talk-btn">
         TCB
       </a>
-      <p>1:1 talk</p>
+      <p>1:1 Talk</p>
     </div>
   )
 }
 
-export default FixedTopBtn
+export default TopBtn

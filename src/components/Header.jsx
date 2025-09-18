@@ -1,62 +1,49 @@
-// src/components/Header.jsx
-import React, { useEffect, useState } from 'react'
+
 import Nav from './Nav'
 import Util from './Util'
-import Mnav from './Mnav'
-import useSmoothScroll from "../hooks/useSmoothScroll"
+import MNav from './MNav'
+import useSmoothScroll from '../hooks/useSmoothScroll'
 import { headerData } from '../util/header'
-import "../styles/components/_header.scss"
+import "../styles/components/header.scss"
+const Header = ({ mNavOpen, onNavOpen, onNavClose }) => {
 
-const Header = ({ navOpen, onNavOpen, onNavClose, onNavToggle }) => {
   const headerLogo = headerData.logo
-  const [isScrolled, setIsScrolled] = useState(false)
   const scrollTo = useSmoothScroll()
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 0)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // 섹션 이동 + 메뉴 닫기
-  const handleSectionClick = (e, item) => {
-    if (item.type === "section") {
+  const handleClick = (e, item) => {
+    if (item.type === 'section') {
       e.preventDefault()
-      const id = item.href?.startsWith("#") ? item.href.slice(1) : item.id
+      const id = item.href?.startsWith('#') ? item.href.slice(1) : item.id
       scrollTo(id)
-      onNavClose?.()
+      onNavClose?.() // 모바일 메뉴라면 닫기
     }
   }
-
   return (
-    <header className={isScrolled ? 'scroll' : ''}>
-      <div className="inner">
-        <Nav
-          isOpen={navOpen}
-          onOpen={onNavOpen}
-          onClose={onNavClose}
-          onToggle={onNavToggle}
-        />
+    <div>
 
-        <h1 className="tit">
-          <a href={headerLogo.href}>
-            {/* alt는 headerLogo.alt 사용 권장 */}
-            <img src={headerLogo.src} alt={headerLogo.alt || 'logo'} />
-          </a>
-        </h1>
 
-        <Util />
-
-        {/* ⬇️ 모바일 전용 네비게이션을 Header에서 렌더링 */}
-        {navOpen && (
-          <Mnav
-            menus={headerData.menus}
-            onClose={onNavClose}
-            onLinkClick={handleSectionClick}
+      <header>
+        <div className="inner">
+          <Nav
+            handleClick={handleClick}
+            onNavOpen={onNavOpen}
           />
-        )}
-      </div>
-    </header>
+          <h1 className="tit">
+            <a href={headerLogo.href}>
+              <img src={headerLogo.src} alt={headerLogo.alt} />
+            </a>
+          </h1>
+          <Util />
+        </div>
+
+      </header>
+      {mNavOpen && (
+        <MNav
+          handleClick={handleClick}
+          onNavClose={onNavClose}
+        />
+      )}
+    </div>
   )
 }
 

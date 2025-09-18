@@ -1,0 +1,89 @@
+header {
+    position: fixed;
+    z-index: 4;
+    top: 4rem;
+    width: 100%;
+    height: 10.5rem;
+    transition: top .3s ease;
+
+    @media screen and (max-width:1600px) {
+        padding: 0 2rem
+    }
+
+    @media screen and (max-width:1111px) {
+        height: 6.3rem;
+        padding: 0 ;
+    }
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 160rem !important;
+
+        nav {
+            .mob-nav-btn {
+                display: none;
+            }
+
+            ul {
+                display: flex;
+                gap: 2rem;
+
+                a {
+                    display: block;
+                    font-size: 1.8rem;
+                    color: var(--primary);
+                    position: relative;
+                    padding: 0 .5rem;
+
+                    &:after {
+                        display: block;
+                        content: "";
+                        width: 0%;
+                        height: .1rem;
+                        background-color: var(--primary);
+                        left: 0;
+                        position: absolute;
+                        transition: width .3s ease;
+                    }
+
+                    &:hover:after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            @media screen and (max-width:1111px) {
+                .mob-nav-btn {
+                    display: block;
+                }
+                ul{
+                    display: none;
+                }
+            }
+
+        }
+
+        h1.tit {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media screen and (max-width:1111px) {
+                width: 12.4rem;
+            }
+        }
+
+        .util-lst {
+            display: flex;
+            gap: 1.2rem;
+
+            @media screen and (max-width:1111px) {
+                li:not(:last-child) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

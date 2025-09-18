@@ -1,0 +1,67 @@
+.inner.skincare-inner {
+    display: flex;
+
+    .t-wrap {
+        h2.tit {
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+    }
+
+    .slider-wrap {
+        position: relative;
+        width: 75rem;
+        height: 53rem;
+        transform: translateX(10rem);
+
+        .in {
+            position: absolute;
+            width: calc(200% + 3rem);
+            height: 100%;
+            left: 0;
+            top: 0;
+
+            .skincare-slider {
+                height: 100%;
+                font-size: 0;
+
+                a {
+                    display: block;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1111px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .slider-wrap {
+            margin-top: 3rem;
+            transform: translateX(0);
+            width: 90vw;
+            height: 55rem;
+
+            .swiper-slide {
+                background-size: cover;
+                background-position: center;
+
+            }
+        }
+    }
+
+    @media screen and (max-width:799px) {
+
+        .slider-wrap {
+            height: 40rem;
+        }
+    }
+    @media screen and (max-width:599px) {
+
+        .slider-wrap {
+            height:25rem;
+        }
+    }
+
+}

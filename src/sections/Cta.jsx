@@ -1,19 +1,26 @@
 import React from 'react'
-import { categories } from '../util/cate'
-import '../styles/sections/_cta.scss'
+import { categories } from '../util/cta'
+import "../styles/sections/cta.scss"
 const Cta = () => {
+
+const stagger = (base,idx,step=100)=>base+idx*step
   return (
-    <div className='inner'>
-      <ul className='cta-lst'>
-        {categories.map((cta) => (
-          <li key={cta.id}>
+    <div className='inner cta-inner'>
+      <ul className="cta-list">
+        {categories.map((cta,i) => (
+
+          <li key={cta.id} 
+                    data-aos="fade-up"
+                    data-aos-delay={stagger(1000,i,100)}
+                    >
             <a href={cta.href}>
+
               <div className="img-wrap" style={{ backgroundImage: `url(${cta.img.src})` }}>
-
-
+                {/* <img src="" alt="" /> */}
               </div>
               <p>
                 {cta.name}
+
               </p>
             </a>
           </li>

@@ -1,13 +1,3 @@
-// src/data/cate.js
-
-/**
- * 카테고리 임시 DB
- * - id: 숫자 카테고리 ID (URL에서 추출)
- * - slug: 영문 경로용 슬러그
- * - name: 한글 표시명
- * - href: 이동 링크
- * - img: { src, alt } 이미지 정보
- */
 const img = (path) => `/img/${path}`;
 export const categories = [
   {
