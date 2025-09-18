@@ -1,0 +1,125 @@
+.inner.collection-inner {
+    text-align: center;
+
+    .t-wrap {
+        margin-bottom: 7rem;
+
+        h2.tit {
+            color: var(--primary);
+        }
+
+        p.txt {
+            margin-top: 2rem;
+            color: var(--secondary);
+            font-size: 1.9rem;
+        }
+    }
+
+    .collection-slider {
+
+        @media screen and (max-width:1111px) {
+            width: clamp(90rem, 90vw, 110rem);
+            padding: 0;
+        }
+
+        .img-wrap {
+            background-color: var(--bg);
+            width: 36rem;
+            height: 36rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin: auto;
+            border-radius: 1rem;
+
+            @media screen and (max-width:1111px) {
+                width: clamp(25rem, 26vw, 30rem);
+                height: clamp(25rem, 26vw, 30rem);
+                margin: 2rem auto 0;
+
+            }
+
+            img {
+                height: 110%;
+                width: 110%;
+                animation: up 2s infinite alternate;
+            }
+        }
+
+        .swiper-pagination {
+            margin-top: 3rem;
+            position: static;
+            background-color: var(--bg);
+            height: .4rem;
+
+            @media screen and (max-width:1220px) {
+                width: clamp(78vw, 85vw, 90vw);
+                margin: 3rem 0 0;
+
+            }
+
+            .swiper-pagination-progressbar-fill {
+                background-color: var(--secondary);
+            }
+        }
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 70%;
+        transform: translateY(-50%);
+        display: block;
+        width: 3.5rem;
+        height: 6.7rem;
+    }
+
+    .prev {
+        left: -5rem;
+        // background-image: url('/img/...');
+    }
+
+    .next {
+        right: -5rem;
+    }
+
+    .name {
+        font-size: 2rem;
+        line-height: 1;
+        color: #231F20;
+        font-weight: 500;
+        letter-spacing: 0;
+            font-family: 'Source Serif Pro', serif;
+    }
+
+    .k-name {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        font-weight: 500;
+        color: #231F20;
+    font-weight: 500;
+    }
+
+    .info-tit {
+        display: inline-block;
+        width: auto;
+        font-size: 13px;
+        color: #009BDE;
+        margin-bottom: 20px;
+        font-weight: 500;
+        padding: 13px 18px 11px;
+        border: 1px solid #009BDE;
+        border-radius: 60px;
+
+        @media screen and (max-width:799px) {
+            font-size: 11px;
+            color: #009BDE;
+            margin-bottom: 15px;
+            font-weight: 400;
+            padding: 8px 13px;
+        }
+    
+
+}
+}

@@ -1,0 +1,34 @@
+.hello-inner {
+    display: flex;
+    align-items: center;
+          @media screen and (max-width:1111px) {
+            flex-direction: column;
+            gap: 3rem;
+          }
+    .img-wrap {
+        overflow: hidden;
+        border-radius: 2rem;
+    }
+
+    .t-wrap {
+        text-align: center;
+        width: 63rem;
+
+        h2.tit {
+            color: var(--primary);
+            margin: 3rem 0 2rem;
+        }
+
+        p.txt-2 {
+            font-size: 1.9rem;
+            line-height: 1;
+            color: var(--secondary);
+            font-family: "Source Serif 4", serif;
+        }
+        p.txt-1 {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            color: #202020;
+        }
+    }
+}

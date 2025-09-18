@@ -1,0 +1,19 @@
+// src/styles/base/_mixins.scss
+@use "./variables" as *;
+
+@mixin respond($point) {
+  @if $point == xs { @media (max-width: $bp-xs) { @content; } }
+  @else if $point == sm { @media (max-width: $bp-sm) { @content; } }
+  @else if $point == md { @media (max-width: $bp-md) { @content; } }
+  @else if $point == lg { @media (max-width: $bp-lg) { @content; } }
+}
+/*
+
+@mixin clamp($prop, $min, $vw, $max)
+CSS clamp()를 아무 속성에 쉽게 적용하는 도우미예요.
+$prop는 속성 이름, $min은 최소값, $vw는 가변(유동)값(보통 vw 사용), $max는 최대값.
+
+*/
+@mixin clamp($prop, $min, $vw, $max) {
+  #{$prop}: clamp($min, $vw, $max);
+}
