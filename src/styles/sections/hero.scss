@@ -6,14 +6,8 @@
 
         .swiper-slide {
             background-repeat: no-repeat;
-            height: 100%;
             background-size: cover;
             background-position: center;
-
-            @media screen and (max-width:1111px) {
-                // height: clamp(calc(50rem + 20vw), 100vw, 100vw);
-                background-position: center top;
-            }
 
             .inner {
                 display: flex;
@@ -21,16 +15,15 @@
                 max-width: 160rem;
 
                 @media screen and (max-width:1111px) {
-
-                    // align-items: flex-end;
                     .t-wrap {
                         position: absolute;
-                        top: auto;
-                        left: 20px;
-                        transform: translateY(0);
-                        bottom: 115px;
+                        left: 2rem;
+                        bottom: 12.5rem;
                     }
                 }
+
+
+
             }
         }
 
@@ -164,33 +157,25 @@
 
             @media screen and (max-width:1111px) {
                 bottom: 3.9rem;
-                left: 2.8vw;
+                left: 2rem;
 
                 .arr-prev,
                 .arr-next {
-                    width: 40px;
-                    bottom: 49px;
+                    width: 4rem;
                 }
-            .arr-prev {
-                background-image: url(/img/r_arrow_prev.svg);
-            }
-
-            .arr-next {
-                background-image: url(/img/r_arrow_next.svg);
-            }
-                .swiper-pagination-fraction {
-                    // width: 40px;
-                    // bottom: 49px;
+                 .arr-prev {
+                    background-image: url(/img/r_arrow_prev.svg);
+                 }
+                 .arr-next {
+                    background-image: url(/img/r_arrow_next.svg);
+                 }
+                 .swiper-pagination-fraction {
                     color: var(--primary);
-                    >span{
 
-                        font-size: 1.5rem;
-                    }
                     &:after {
                         background-color: var(--primary);
                     }
-                }
-
+                 }
             }
         }
     }

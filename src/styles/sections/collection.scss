@@ -16,11 +16,11 @@
     }
 
     .collection-slider {
+        .info-tit {}
 
-        @media screen and (max-width:1111px) {
-            width: clamp(90rem, 90vw, 110rem);
-            padding: 0;
-        }
+        .kname {}
+
+        .name {}
 
         .img-wrap {
             background-color: var(--bg);
@@ -32,13 +32,6 @@
             overflow: hidden;
             margin: auto;
             border-radius: 1rem;
-
-            @media screen and (max-width:1111px) {
-                width: clamp(25rem, 26vw, 30rem);
-                height: clamp(25rem, 26vw, 30rem);
-                margin: 2rem auto 0;
-
-            }
 
             img {
                 height: 110%;
@@ -53,16 +46,26 @@
             background-color: var(--bg);
             height: .4rem;
 
-            @media screen and (max-width:1220px) {
-                width: clamp(78vw, 85vw, 90vw);
-                margin: 3rem 0 0;
-
-            }
-
             .swiper-pagination-progressbar-fill {
                 background-color: var(--secondary);
             }
         }
+
+        @media screen and (max-width:1200px) {
+            width: clamp(90rem, 90vw, 110rem);
+
+            .img-wrap {
+                width: clamp(25rem, 26vw, 30rem);
+                height: clamp(25rem, 26vw, 30rem);
+            }
+
+            .swiper-pagination {
+                width: 90vw;
+                margin: 3rem 0;
+            }
+        }
+
+
     }
 
     .prev,
@@ -83,43 +86,4 @@
     .next {
         right: -5rem;
     }
-
-    .name {
-        font-size: 2rem;
-        line-height: 1;
-        color: #231F20;
-        font-weight: 500;
-        letter-spacing: 0;
-            font-family: 'Source Serif Pro', serif;
-    }
-
-    .k-name {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-        font-weight: 500;
-        color: #231F20;
-    font-weight: 500;
-    }
-
-    .info-tit {
-        display: inline-block;
-        width: auto;
-        font-size: 13px;
-        color: #009BDE;
-        margin-bottom: 20px;
-        font-weight: 500;
-        padding: 13px 18px 11px;
-        border: 1px solid #009BDE;
-        border-radius: 60px;
-
-        @media screen and (max-width:799px) {
-            font-size: 11px;
-            color: #009BDE;
-            margin-bottom: 15px;
-            font-weight: 400;
-            padding: 8px 13px;
-        }
-    
-
-}
 }

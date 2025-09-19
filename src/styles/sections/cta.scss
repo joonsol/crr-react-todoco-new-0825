@@ -1,17 +1,14 @@
 .cta-inner {
-    .cta-list {
+    .cta-list{
         display: flex;
         justify-content: center;
         gap: 2rem;
-
-        @media screen and (max-width:1111px) {
+        @media screen  and (max-width:1111px){
             flex-wrap: wrap;
-            gap: 1.5rem;
+            
         }
-
         >li {
             text-align: center;
-
             .img-wrap {
 
                 width: 13rem;
@@ -20,13 +17,7 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 border-radius: 50%;
-
-                @media screen and (max-width:1111px) {
-                    width: 10rem;
-                    height: 10rem;
-                }
             }
-
             p {
                 font-size: 1.5rem;
                 margin-top: .9rem;

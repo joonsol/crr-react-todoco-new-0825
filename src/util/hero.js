@@ -35,7 +35,7 @@ export const heroSlides = [
   },
   {
     id: "hs-3",
-    title: "Scent-Free,<br> Worry-Free",
+    title: "Scent-Free, Worry-Free",
     subtitle: "Sensitive Skin Friendly",
     desc: "민감 피부를 위한 무향 포뮬러",
     ctaText: "스타터 키트 보러가기",
@@ -50,7 +50,7 @@ export const heroSlides = [
   },
   {
     id: "hs-4",
-    title: "Eco-Conscious<br> Beauty",
+    title: "Eco-Conscious Beauty",
     subtitle: "Vegan & Cruelty-Free",
     desc: "지속 가능성을 생각한 깔끔한 선택",
     ctaText: "혜택보러가기",
@@ -64,3 +64,7 @@ export const heroSlides = [
     order: 4,
   },
 ];
+
+// 활성 슬라이드만 가져오기
+export const getActiveHeroSlides = () =>
+  heroSlides.filter(s => s.active).sort((a, b) => a.order - b.order);

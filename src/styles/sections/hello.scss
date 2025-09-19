@@ -1,10 +1,12 @@
 .hello-inner {
     display: flex;
     align-items: center;
-          @media screen and (max-width:1111px) {
-            flex-direction: column;
-            gap: 3rem;
-          }
+
+    @media screen and (max-width:1111px) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
     .img-wrap {
         overflow: hidden;
         border-radius: 2rem;
@@ -25,6 +27,7 @@
             color: var(--secondary);
             font-family: "Source Serif 4", serif;
         }
+
         p.txt-1 {
             font-size: 1.6rem;
             line-height: 2.6rem;

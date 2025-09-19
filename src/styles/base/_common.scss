@@ -48,22 +48,19 @@
                 bottom: 0;
                 background-color: var(--bg2);
                 z-index: -1;
+
+                @media screen and (max-width: 1111px) {
+                    height: 6rem;
+                }
             }
+
+
+
         }
 
         &#Instar {
             background-color: var(--bg2);
 
-        }
-
-        @media screen and (max-width:1111px) {
-            &#Skincare {
-                padding: 10rem 0 0;
-
-                &::after {
-                    height: 6rem;
-                }
-            }
         }
     }
 
