@@ -8,46 +8,52 @@ import {
   footerLegal
 } from "../util/footer";
 
-import "../styles/components/footer.scss"
+import "../styles/components/footer.scss";
 
 const Footer = () => {
-  const [cusStatus, setCusStatus] = useState(false);
-  const hiddenRef = useRef(null);
-  const didMount = useRef(false); // 최초 실행 여부 체크
+  // 고객센터 아코디언 메뉴의 열림/닫힘 상태를 관리합니다.
+  const [isOpen, setIsOpen] = useState(false);
+  // 애니메이션을 적용할 'hidden' 클래스 div에 접근하기 위한 ref
+  const hiddenContentRef = useRef(null);
 
-
-
-  // 1) 화면폭 기준 초기 상태 세팅 + 리사이즈 대응
+  // 1) 화면 너비에 따라 고객센터 메뉴의 초기 상태를 설정하고, 리사이즈 이벤트에 대응합니다.
   useEffect(() => {
-    const reSizeOpen = () => {
-      setCusStatus(window.innerWidth >= 1111);
+    const handleResize = () => {
+      // 화면 너비가 1111px 이상일 때 메뉴를 항상 열린 상태로 유지합니다.
+      setIsOpen(window.innerWidth >= 1111);
     };
-    reSizeOpen();
-    window.addEventListener("resize", reSizeOpen);
-    return () => window.removeEventListener("resize", reSizeOpen);
+    
+    // 컴포넌트 마운트 시 초기 상태 설정
+    handleResize();
+    
+    // 리사이즈 이벤트 리스너 등록 및 클린업
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // 열림/닫힘 시 height 애니메이션 적용
+  // 2) isOpen 상태 변화에 따라 아코디언 애니메이션을 실행합니다.
   useEffect(() => {
-    const el = hiddenRef.current;
+    const el = hiddenContentRef.current;
     if (!el) return;
 
-    if (cusStatus) {
-      // 열릴 때: 현재 scrollHeight로 설정 → transition 끝난 후 auto
-      el.style.height = el.scrollHeight + "px";
-      const end = () => {
+    if (isOpen) {
+      // 열릴 때: height를 scrollHeight로 설정하여 애니메이션 시작
+      el.style.height = `${el.scrollHeight}px`;
+      
+      // transition이 끝난 후 height를 'auto'로 변경하여 콘텐츠에 맞춰 높이를 자유롭게 설정
+      const onTransitionEnd = () => {
         el.style.height = "auto";
-        el.removeEventListener("transitionend", end);
+        el.removeEventListener("transitionend", onTransitionEnd);
       };
-      el.addEventListener("transitionend", end);
+      el.addEventListener("transitionend", onTransitionEnd);
     } else {
-      // 닫힐 때: 현재 높이를 픽셀로 고정 → 강제로 리플로우 후 height: 0
-      el.style.height = el.scrollHeight + "px";
-      // 강제 리플로우 (브라우저에게 높이값 확정시킴)
-      void el.offsetHeight;
+      // 닫힐 때: 현재 높이를 픽셀로 고정하고, 강제 리플로우 후 height를 0으로 만듭니다.
+      el.style.height = `${el.scrollHeight}px`;
+      void el.offsetHeight; // 강제 리플로우 (브라우저가 높이값을 확정하도록 함)
       el.style.height = "0px";
     }
-  }, [cusStatus]);
+  }, [isOpen]);
+
   return (
     <footer className="footer">
       <div className="inner foot-inner">
@@ -57,12 +63,12 @@ const Footer = () => {
               <img src={logoData.src} alt={logoData.alt} />
             </a>
           </h3>
-
           <ul className="foot-lst-1">
             {companyData.map((line, i) => (
               <li key={i}>{line}</li>
             ))}
           </ul>
+          {/* 중복을 유지한 첫 번째 footer-legal 영역 */}
           <div className="footer-legal">
             <p>{footerLegal.copyright}</p>
             <div className="legal-links">
@@ -91,20 +97,18 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        {/* 오른쪽 영역(비워둠 / SNS 등 넣을 자리) */}
-        <div className="right">
 
-          {/* 고객센터 */}
+        <div className="right">
+          {/* 고객센터 아코디언 */}
           <div
-            onClick={() => setCusStatus(v => !v)}
-            className={`${cusStatus ? "open" : ""} cus-wrap`}
+            onClick={() => setIsOpen(prevStatus => !prevStatus)}
+            className={`${isOpen ? "open" : ""} cus-wrap`}
           >
             <h4>
               {customerCenterData.title}
               <span className="m-plus"></span>
             </h4>
-            <div className="hidden" ref={hiddenRef}>
-
+            <div className="hidden" ref={hiddenContentRef}>
               <p className='cs-box'>
                 <a href={customerCenterData.tel.href}>
                   {customerCenterData.tel.value}
@@ -117,9 +121,9 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
+          
+          {/* 중복을 유지한 두 번째 footer-legal 영역 */}
           <div className="footer-legal">
-
             <div className="legal-links">
               {footerLegal.links.map((item, i) => (
                 <a key={i} href={item.href}>
@@ -142,7 +146,6 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-
         </div>
       </div>
     </footer>
@@ -150,4 +153,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
