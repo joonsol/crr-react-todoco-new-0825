@@ -1,0 +1,55 @@
+name: Deploy to S3 + CloudFront
+
+on:
+  push:
+    branches: [ main ]   # 배포 트리거 브랜치
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build   # (Vite 기본 출력: dist)
+
+      # AWS 자격 구성 (region 필수)
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            ${{ secrets.AWS_REGION }}   # 예) ap-northeast-2
+
+      # 정적 자산: 긴 캐시 (index.html 제외)
+      - name: Sync static assets to S3 (long cache)
+        run: |
+          aws s3 sync "dist" "s3://${{ secrets.S3_BUCKET }}" --delete \
+            --exclude "index.html" \
+            --cache-control "max-age=31536000,public" \
+            --no-progress
+
+      # HTML: 캐시 금지(즉시 갱신)
+      - name: Upload index.html (no cache)
+        run: |
+          aws s3 cp "dist/index.html" "s3://${{ secrets.S3_BUCKET }}/index.html" \
+            --cache-control "no-cache, no-store, must-revalidate" \
+            --content-type "text/html; charset=utf-8" \
+            --no-progress
+
+      # CloudFront 캐시 무효화
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
